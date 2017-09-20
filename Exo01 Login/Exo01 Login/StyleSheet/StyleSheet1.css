@@ -1,0 +1,12 @@
+﻿body {
+}
+#mainBox{
+    border: solid 1px black;
+    margin: auto;
+    width:250px;
+    height: 100%;
+    text-align:center;
+}
+#vertical {
+    vertical-align: middle;
+}
