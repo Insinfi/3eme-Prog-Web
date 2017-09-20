@@ -1,3 +1,40 @@
 ﻿body {
-    color: orangered;
+    
+}
+hr{
+  width: 500px;
+  height: 10px;
+  background-color: aqua;
+  border-radius: 5px;
+}
+h2{
+    color: chocolate;
+}
+#taille{
+    display: inline-block;
+    float: left;
+    width: 500px;
+}
+#l01{
+    color : red;
+}
+#c01{
+    background-color: yellow;
+}
+li{
+    font-weight: bold;
+}
+.block {
+    color: deeppink;
+    font-weight: bold;
+    font-style: italic;
+}
+.inline {
+    color: orange;
+    font-weight: bold;
+    font-style: italic;
+}
+td{
+    border: thin black solid;
+    text-align: center;
 }

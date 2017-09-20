@@ -10,10 +10,46 @@
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
     <link href="~/StyleSheet/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
+
 </head>
 <body>
-    <div> 
-        Bonjour
-    </div>
+    <h2>Inline / Block</h2>
+    <div>Ceci est <span class="inline">un inline</span>!</div>
+    <div> Ceci est <div class="block">un block</div>!</div>
+    <hr />
+    <h2>List</h2>
+    <ul>
+        <li>On commence</li>
+        <li>avec &lt;ul&gt;</li>
+        <li>puis on ajoute &lt;li&gt;</li>
+        <li>pour chaque point de la list</li>
+    </ul>
+    <hr />
+    <h2>Tableaux</h2>
+    <table>
+        <colgroup span="1" id="c01"></colgroup>
+        <tr>
+            <td colspan="2">colspan / Ligne <text id="l01">&lt;tr&gt;</text></td>
+        </tr>
+        <tr>
+            <td>Cellule</td>
+            <td rowspan="2">rowspan</td>
+        </tr>
+        <tr>
+            <td>C</td>
+        </tr>
+    </table>
+    <hr />
+    <h2>Meter</h2>
+    <meter value="20" min="0" max="100" low="30" high="70" optimum="90">50</meter>
+    <hr />
+    <h2>Lorem ipsum</h2>
+    <div id="taille">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis tincidunt mauris, sed consectetur eros porttitor id. Aenean egestas mi non tellus porta, sed rutrum dui auctor. Pellentesque a lobortis nibh. Mauris molestie tortor metus, at cursus elit fringilla sit amet. Sed malesuada enim quam, posuere imperdiet urna placerat in. Aliquam erat volutpat. Etiam euismod, nulla vitae commodo tristique, metus dolor imperdiet sapien, sed laoreet ligula dui vel leo. Integer nec suscipit velit. Duis bibendum nibh at massa sagittis, vel rhoncus dui auctor. Nam orci lectus, facilisis sed facilisis at, auctor sit amet ligula. Vestibulum aliquet condimentum malesuada. Quisque cursus ultricies felis, non auctor eros malesuada vel. Nullam finibus nisi a tortor porttitor lacinia quis sit amet ante. Sed elit ipsum, pellentesque vel est non, convallis viverra odio. In condimentum augue eget ante convallis placerat.</div>
+    <div id="taille">Nam efficitur lectus sed eros condimentum tempus. In tempor risus vel nisl vulputate accumsan. Curabitur elementum tempor risus, at finibus odio tristique sed. Vestibulum id consectetur erat. Vestibulum commodo, nunc suscipit pulvinar elementum, velit purus blandit dolor, tristique finibus augue tortor vitae leo. Curabitur vestibulum vestibulum est nec gravida. Praesent in cursus sapien. Ut condimentum magna quis ex consequat dapibus. Donec gravida finibus enim, vel iaculis dolor scelerisque id. Curabitur aliquet viverra est, ultricies scelerisque odio vestibulum id. Etiam porttitor erat sem, at suscipit est pellentesque sed. Maecenas ullamcorper semper ante eget efficitur. Suspendisse augue orci, mattis at ipsum et, ultricies eleifend felis.</div>
 </body>
 </html>
