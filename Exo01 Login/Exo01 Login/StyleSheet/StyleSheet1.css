@@ -13,13 +13,14 @@
     top: 50%;
     transform: translate(-50%,-50%);
     box-shadow: 10px 10px 10px pink;
+    text-align: center;
 }
 header {
     font-size: larger;
     border: solid black 5px;
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     background-color: grey;
-    text-align:center;
+    text-align: center;
 }
 
 #image {
@@ -49,7 +50,4 @@ header {
 footer{
     text-align:center;
     margin-top: 20px;
-}
-#buttonC{
-    
 }
