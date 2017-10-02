@@ -17,8 +17,8 @@
 }
 header {
     font-size: larger;
-    border: solid black 5px;
-    border-radius: 20px 20px 0 0;
+    border-radius: 15px 15px 0 0;
+    border-bottom: solid black 5px;
     background-color: grey;
     text-align: center;
 }
