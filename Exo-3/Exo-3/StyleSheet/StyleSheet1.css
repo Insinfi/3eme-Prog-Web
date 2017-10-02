@@ -4,12 +4,13 @@
 }
 
 body {
+    color: black;
 }
 
-header{
+header {
     margin-top: 5px;
-    text-align:center;
-    display:block;
+    text-align: center;
+    display: block;
 }
 
 header img{
@@ -17,10 +18,11 @@ header img{
     width: 100px;
     float: left;    
 }
-header div{
-    height: 100px;
-    line-height: 100px;
-}
+    header div {
+        height: 100px;
+        line-height: 100px;
+        text-shadow: 1px 1px red;
+    }
 header span{
     font-size: 42px;
 }
