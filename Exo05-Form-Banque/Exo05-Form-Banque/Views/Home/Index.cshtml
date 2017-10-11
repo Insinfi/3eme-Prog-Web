@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/StyleSheet/StyleSheet1.css" rel="stylesheet" />
+    <title>Index</title>
+    <script type="text/javascript">
+        function Verifi()
+        {
+            var Carte = document.getElementById("nCarte").value;
+            var result = 0;
+            var regex = /^(\d{4}\s){3}\d{4}$/;
+            if (regex.test(Carte) == true) {
+                Carte = Carte.replace(/[\s-]/g,"");
+                for (i = Carte.length - 1; i >= 0; i--) {
+                    data = parseInt(Carte[i]);
+                    if ((i % 2) == 0) {
+                        data = data * 2;
+                        if (data > 9) data = data % 9;
+                    }
+                    result = result + data;
+                }
+                if (result % 10 == 0) {
+                    alert("Numéro valide");
+                }
+                else {
+                    alert("Numéro non valide");
+                }
+            } else {
+                alert("What are you doing mother fucker");
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <div id="Centre"> 
+        <form action="">
+            <label>Numéro de carte: </label><input type="text" id="nCarte" />
+            <input type="button" onclick="Verifi();" value="Click" />
+        </form>
+    </div>
+</body>
+</html>
