@@ -1,0 +1,26 @@
+﻿@model List<GestionEtudian_OMG_WHAT_A_EXERCICE.Models.Etudiant>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <form>
+            <select id="Matricule" onchange="GetEtudiantInfo();">
+                <option value="" disabled selected>-- selectionner un matricule--</option>
+                    @foreach(var etudiant in @Model)
+                    {
+                        <option value="@etudiant.Matricule">@etudiant.Matricule</option>
+                    }
+            </select>
+        </form>
+    </div>
+</body>
+</html>

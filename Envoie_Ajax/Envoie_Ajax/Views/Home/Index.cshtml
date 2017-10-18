@@ -11,10 +11,18 @@
     <script src="~/Scripts/jquery-3.2.1.js"></script>
     <script type="text/javascript">
         function SoumettreAjax() {
-            var data = $('#data').val();
+            var data = $('#identiteid').val();
+            var val2 = $('#prenomid').val();
+            var MonObjet = new Object();
+            MonObjet.Identite = data;
+            MonObjet.Prenom = val2;
+
+            
             $.ajax({
-                type: "GET",
-                url: '@Url.Action("Traitement")'+"?Identite=" + data,
+                type: "POST",
+                url: '@Url.Action("Traitement2")',
+                data: JSON.stringify(MonObjet),
+                contentType: 'application/json',
                 success: function (msg) {
                     alert(msg);
                 }});
@@ -24,8 +32,9 @@
     <title>Index</title>
 </head>
 <body>
-    <form enctype="application/x-www-form-urlencoded" method="get" action="~/Home/Traitement">
-        <label name="nom">Nom :</label><input type="text" name="Identite" /><br />
+    <form enctype="application/x-www-form-urlencoded" method="post" action="~/Home/Traitement2">
+        <label name="nom">Nom :</label><input type="text" id="identiteid" /><br />
+        <label name="Prenom">Prenom :</label><input type="text" id="prenomid" /><br />
         <input type="submit" value="Envoie AJAX" onclick="SoumettreAjax()" />
     </form>
 </body>

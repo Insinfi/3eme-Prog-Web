@@ -18,5 +18,9 @@ namespace Envoie_Ajax.Controllers
 
             return View("Index");
         }
+        public ActionResult Traitement2(data tmp)
+        {
+            return View("Index");
+        }
     }
 }
