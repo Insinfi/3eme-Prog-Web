@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <link href="~/StyleSheet/StyleSheet1.css" rel="stylesheet" />
+    <script type="text/javascript">
+        //function ShowHide(obj) {
+        //    alert(obj.parentNode.lastElementChild.style.display);
+        //    if (obj.parentNode.lastElementChild.style.display != 'none') {
+        //        obj.parentNode.lastElementChild.style.display = 'none';
+        //    } else {
+        //        obj.parentNode.lastElementChild.style.display = 'block';
+        //    }
+            
+        //}
+        $(document).ready(function () { 
+            $(".titre").on("click", function () {
+                $(this).parent().children().last().toggle("slow");
+            });
+        }); 
+    </script>
+
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <div class="titre" @*onclick="ShowHide(this);"*@>1er titre </div>
+        <div class="block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum ante vel lobortis convallis. In et aliquet ante. Quisque et turpis ac augue bibendum iaculis eu vel augue. Maecenas nec ullamcorper enim, fermentum laoreet elit. Nulla consectetur lobortis nibh a mattis. Vestibulum at eros in sem rhoncus ultricies a nec orci. Ut accumsan nulla risus, vel rhoncus massa faucibus sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris fermentum suscipit elit a bibendum. Praesent pellentesque metus eget malesuada tempor. Etiam at varius quam. Duis scelerisque facilisis malesuada.</div>
+    </div>
+    <div>
+        <div class="titre"@*onclick="ShowHide(this);"*@>2eme titre </div>
+        <div class="block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum ante vel lobortis convallis. In et aliquet ante. Quisque et turpis ac augue bibendum iaculis eu vel augue. Maecenas nec ullamcorper enim, fermentum laoreet elit. Nulla consectetur lobortis nibh a mattis. Vestibulum at eros in sem rhoncus ultricies a nec orci. Ut accumsan nulla risus, vel rhoncus massa faucibus sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris fermentum suscipit elit a bibendum. Praesent pellentesque metus eget malesuada tempor. Etiam at varius quam. Duis scelerisque facilisis malesuada.</div>
+    </div>
+    <div>
+        <div class="titre"@*onclick="ShowHide(this);*@">3eme titre </div>
+        <div class="block">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum ante vel lobortis convallis. In et aliquet ante. Quisque et turpis ac augue bibendum iaculis eu vel augue. Maecenas nec ullamcorper enim, fermentum laoreet elit. Nulla consectetur lobortis nibh a mattis. Vestibulum at eros in sem rhoncus ultricies a nec orci. Ut accumsan nulla risus, vel rhoncus massa faucibus sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris fermentum suscipit elit a bibendum. Praesent pellentesque metus eget malesuada tempor. Etiam at varius quam. Duis scelerisque facilisis malesuada.</div>
+    </div>
+</body>
+</html>

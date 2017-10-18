@@ -1,0 +1,26 @@
+﻿body {
+}
+
+.titre {
+    border: solid 2px #464242;
+    background-color: #808080;
+    display: block;
+    width: 100%;
+    min-width: 300px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.block {
+    border: solid 2px #464242;
+    background-color: #adacac;
+    width: 100%;
+    min-width: 300px;
+    display:none;
+}
+
+.titre:hover {
+    cursor: pointer;
+    background-color: #808000;
+}
