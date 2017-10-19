@@ -8,7 +8,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
     <title>Index</title>
+    <script type="text/javascript">
+        function GetEtudientInfo() {
+            var mat = $('#Matricule').val();
+            $.ajax({
+                dataType: 'json',
+                type: 'POST',
+                url: '/Home/GetEtudiantInfo/' + mat,
+                success: function (etudiant) {
+                    $('#Nom').tex(etudiant.nom);
+                    $('#Prenom').tex(etudiant.prenom);
+                    $('#Localite').tex(etudiant.localite);
+
+                }
+            });
+        }
+    </script>
 </head>
 <body>
     <div> 
@@ -19,7 +36,10 @@
                     {
                         <option value="@etudiant.Matricule">@etudiant.Matricule</option>
                     }
-            </select>
+            </select><br />
+            <label>Nom : </label><span id="Nom"></span><br />
+            <label>Prenom : </label><span id="Prenom"></span><br />
+            <label>Localite : </label><span id="Localite"></span><br />
         </form>
     </div>
 </body>
