@@ -16,12 +16,27 @@ namespace GestionEtudian_OMG_WHAT_A_EXERCICE.Controllers
         public ActionResult Index()
         {
             GetAllMatricules();
-            return View();
+            return View(ListeMatricules);
         }
 
-        public string GetStudentInfo(string id)
+        public JsonResult GetStudentInfo(string id)
         {
-            return "Toto";
+            string ConnectionStr = @"Server=127.0.0.1\SQLEXPRESS;Database=dbCours20172018;Uid=Cours2018;Pwd=password;";
+            SqlConnection MyConnection = new SqlConnection(ConnectionStr);
+            MyConnection.Open();
+
+            SqlCommand MyCmd = new SqlCommand();
+            MyCmd.Connection = MyConnection;
+            MyCmd.CommandType = System.Data.CommandType.StoredProcedure;
+            MyCmd.CommandText = "GetStudentInfo";
+            MyCmd.Parameters.AddWithValue("@Matricule", id);
+            SqlDataReader MyRd = MyCmd.ExecuteReader();
+            MyRd.Read();
+            Models.Etudiant etud = new Models.Etudiant { Nom = MyRd["Nom"].ToString(), Prenom = MyRd["Prenom"].ToString(), Localite = MyRd["Localite"].ToString() };
+            MyRd.Close();
+            MyConnection.Close();
+
+            return Json(etud);
         }
         public void GetAllMatricules()
         {
