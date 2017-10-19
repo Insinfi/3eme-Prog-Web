@@ -11,16 +11,17 @@
     <script src="~/Scripts/jquery-3.2.1.js"></script>
     <title>Index</title>
     <script type="text/javascript">
-        function GetEtudientInfo() {
+        function GetStudentInfo() {
             var mat = $('#Matricule').val();
             $.ajax({
                 dataType: 'json',
                 type: 'POST',
-                url: '/Home/GetEtudiantInfo/' + mat,
+                url: '/Home/GetStudentInfo/' + mat,
                 success: function (etudiant) {
-                    $('#Nom').tex(etudiant.nom);
-                    $('#Prenom').tex(etudiant.prenom);
-                    $('#Localite').tex(etudiant.localite);
+                    alert(etudiant.Nom);
+                    $('#Nom').text(etudiant.Nom);
+                    $('#Prenom').text(etudiant.Prenom);
+                    $('#Localite').text(etudiant.Localite);
 
                 }
             });
@@ -30,7 +31,7 @@
 <body>
     <div> 
         <form>
-            <select id="Matricule" onchange="GetEtudiantInfo();">
+            <select id="Matricule" onchange="GetStudentInfo();">
                 <option value="" disabled selected>-- selectionner un matricule--</option>
                     @foreach(var etudiant in @Model)
                     {
