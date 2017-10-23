@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <link href="~/StyleSheet/StyleSheet1.css" rel="stylesheet" />
+    <title>AddArticle</title>
+    <script type="text/javascript">
+        //$(function () {
+        //    $("#Preview").click(function () {
+        //                if (typeof (FileReader) != "undefined") {
+        //                    $("#Photo").show();
+        //                    $("#Photo").append("<img />");
+        //                    var reader = new FileReader();
+        //                    reader.onload = function (e) {
+        //                        $("#Photo").attr("src", e.target.result);
+        //                    }
+        //                    reader.readAsDataURL($("#PhotoSelect")[0].files[0]);
+        //                } 
+        //    });
+        //});
+
+        function PreviewPicture() {
+            var data = new FormData();
+            var files = $("#PhotoSelect").get(0).files;
+            if (files.length > 0) {
+                data.append("PhotoSelect", file[0]);
+                $.ajax({
+                    url: '@Url.Action("Preview")',
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+                    data: data,
+                    success: function (response) {
+                        $('#Photo').attr("src", "/Images/" + response);
+                    },
+                    error: function (er) {
+                        alert(er);
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <form enctype="multipart/form-data" >
+        <div id="PhotoContainer">
+            <img name="Photo" id="Photo" />
+            <input name="PhotoSelect" id="PhotoSelect" type="file" /><br />
+            <input id="Preview" type="button" value="Preview" onclick="PreviewPicture();"><br />
+        </div>
+        <div id="ArticleDescription">
+            <div>
+                <label>Nom:</label><input name="Nom" type="text" /><br />
+                <label>Prix:</label><input name="Prix" type="text" /><br />
+                <label>Stock:</label><input name="Stock" type="text" /><br />
+                <label>Promotion:</label><input name="Promo" type="checkbox" /><br />
+                <label>Descriptif:</label><br />
+                <textarea name="Descriptif"></textarea><br />
+                <input type="submit" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
