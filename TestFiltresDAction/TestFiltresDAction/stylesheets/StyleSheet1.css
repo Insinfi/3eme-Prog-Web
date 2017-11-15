@@ -1,0 +1,37 @@
+﻿body {
+}
+
+#LoginForm {
+    margin: auto;
+    width: 400px;
+    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    background: url('../img/lama.png');
+}
+
+#header{
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+#content{
+    margin-top: 25px;
+    display: inline-block;
+    padding: 20px;
+    text-align: left;
+}
+
+#content label{
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 175px;
+}
+
+#content input{
+    width: 150px;
+}
+
+#content button{
+    float: right;
+}

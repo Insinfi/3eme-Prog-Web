@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/stylesheets/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="LoginForm"> 
+        <div id="header">
+            <span>connexion</span>
+        </div>
+        <form id="content" method="post">
+            <label>nom:</label><input type="text" name="Identifiant" /><br />
+            <label>mot de passe:</label><input type="password" name="password" /><br />
+            <input type="hidden" value="@ViewBag.ReturnUrl" name="Redirection" />
+            <button type="submit">Valider</button>
+        </form>
+    </div>
+</body>
+</html>
