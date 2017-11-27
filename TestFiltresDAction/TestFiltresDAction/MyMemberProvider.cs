@@ -6,7 +6,7 @@ using System.Web.Security;
 
 namespace TestFiltresDAction
 {
-    public class MyMemeberProvider : MembershipProvider
+    public class MyMemberProvider : MembershipProvider
     {
         public override bool EnablePasswordRetrieval => throw new NotImplementedException();
 
@@ -107,7 +107,9 @@ namespace TestFiltresDAction
 
         public override bool ValidateUser(string username, string password)
         {
-            throw new NotImplementedException();
+            DataClasses1DataContext MyContext = new DataClasses1DataContext();
+            string result = MyContext.ValidateUser(username, password).FirstOrDefault<ValidateUserResult>().Column1.ToString();
+            return int.Parse(result) > 0;
         }
     }
 }

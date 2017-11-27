@@ -7,7 +7,7 @@ using System.Web.Security;
 
 namespace TestFiltresDAction.Controllers
 {
-    [Authorize]
+    [MyAuthorize(Roles="admin")]
     public class HomeController : Controller
     {
         // GET: Home
@@ -33,6 +33,11 @@ namespace TestFiltresDAction.Controllers
         [HttpPost]
         public ActionResult Login(Models.Identite idt)
         {
+            if (Membership.ValidateUser(idt.Identifiant, idt.Password))
+            {
+                FormsAuthentication.SetAuthCookie(idt.Identifiant, false);//enregistrement
+                return new RedirectResult(idt.Redirection);
+            }
             if (FormsAuthentication.Authenticate(idt.Identifiant, idt.Password))
             {
                 FormsAuthentication.SetAuthCookie(idt.Identifiant, false);

@@ -37,7 +37,18 @@ namespace TestFiltresDAction
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+
+            DataClasses1DataContext myContext = new DataClasses1DataContext();
+            var ListRoles = myContext.GetrolesByUsername(username).ToList<GetrolesByUsernameResult>();
+            string[] StrListRoles = new string[ListRoles.Count];
+            int indice = 0;
+            foreach (GetrolesByUsernameResult tmp in ListRoles)
+            {
+                StrListRoles[indice] = tmp.nom;
+                indice++;
+            }
+            return StrListRoles;
+            //vérification du role
         }
 
         public override string[] GetUsersInRole(string roleName)

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.Number = Model.Count;
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+@model List<GetAllArticleResult>
+    @foreach (var tmp in @Model)
+    {
+        <div class="divArticle">
+            @*@Html.Action("ArtcileItem", new { id = tmp.ArticleID });*@
+            @Html.Partial("ArticleItem2", tmp)
+        </div>
+    }
+
+    @section footer{
+        <div>@ViewBag.Number</div>
+        }
+

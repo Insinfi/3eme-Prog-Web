@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jsencrypt.js"></script>
+    <script type="text/javascript">
+        // Call this code when the page is done loading.
+        $(function () {
+            // Run a quick encryption/decryption when they click.
+            $('#testme').click(function () {
+                var encrypt = new JSEncrypt();
+                encrypt.setPublicKey($('#pubKey').val());
+                var encrypted = encrypt.encrypt($('#input').val());
+                $('#result').val(encrypted);
+            });
+            $ajax({
+                
+            })
+        });
+    </script>
+</head>
+<body>
+    @*<div>
+        <input type="hidden" name="PubKey" value="@ViewBag.publicKey"/>
+        <div>Connextion box</div>
+        <div><span>Login : </span><input type="text" name="loginTB" /></div>
+        <div><span>Password : </span><input type="password" name="passwordTB"/></div>
+        <div><input type="button" name="loginBT" value="Connextion"/></div>
+    </div>*@
+    <input type="hidden" id="pubKey" value="@ViewBag.publicKey"/>
+    <input type="text" id="input"/>
+    <input type="button" id="testme" value="Test me" />
+    <input type="text" id="result" value=""/>
+</body>
+</html>
