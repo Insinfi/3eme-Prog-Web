@@ -18,9 +18,12 @@ namespace WebAPI_Exo1.Controllers
         }
 
         // GET: api/Home/5
-        public string Get(int id)
+        public GetUserInfoResult Get(string id)
         {
-            return "value";
+
+            DataClasses1DataContext MyContext = new DataClasses1DataContext();
+            var User = MyContext.GetUserInfo(Guid.Parse(id)).FirstOrDefault();
+            return User;
         }
     }
 }

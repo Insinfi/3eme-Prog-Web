@@ -68,6 +68,13 @@ namespace WebAPI_Exo1
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<GetUserListResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserInfo")]
+		public ISingleResult<GetUserInfoResult> GetUserInfo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> userID)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
+			return ((ISingleResult<GetUserInfoResult>)(result.ReturnValue));
+		}
 	}
 	
 	public partial class GetUserListResult
@@ -127,6 +134,176 @@ namespace WebAPI_Exo1
 				if ((this._Prenom != value))
 				{
 					this._Prenom = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetUserInfoResult
+	{
+		
+		private System.Guid _UserID;
+		
+		private string _Nom;
+		
+		private string _Prenom;
+		
+		private string _mail;
+		
+		private string _Tel;
+		
+		private string _GSM;
+		
+		private string _NomDeRue;
+		
+		private string _CodePostal;
+		
+		private string _Localite;
+		
+		public GetUserInfoResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nom", DbType="NVarChar(50)")]
+		public string Nom
+		{
+			get
+			{
+				return this._Nom;
+			}
+			set
+			{
+				if ((this._Nom != value))
+				{
+					this._Nom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Prenom", DbType="NVarChar(50)")]
+		public string Prenom
+		{
+			get
+			{
+				return this._Prenom;
+			}
+			set
+			{
+				if ((this._Prenom != value))
+				{
+					this._Prenom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mail", DbType="NVarChar(50)")]
+		public string mail
+		{
+			get
+			{
+				return this._mail;
+			}
+			set
+			{
+				if ((this._mail != value))
+				{
+					this._mail = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tel", DbType="NVarChar(50)")]
+		public string Tel
+		{
+			get
+			{
+				return this._Tel;
+			}
+			set
+			{
+				if ((this._Tel != value))
+				{
+					this._Tel = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GSM", DbType="NVarChar(50)")]
+		public string GSM
+		{
+			get
+			{
+				return this._GSM;
+			}
+			set
+			{
+				if ((this._GSM != value))
+				{
+					this._GSM = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NomDeRue", DbType="NVarChar(50)")]
+		public string NomDeRue
+		{
+			get
+			{
+				return this._NomDeRue;
+			}
+			set
+			{
+				if ((this._NomDeRue != value))
+				{
+					this._NomDeRue = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodePostal", DbType="NVarChar(50)")]
+		public string CodePostal
+		{
+			get
+			{
+				return this._CodePostal;
+			}
+			set
+			{
+				if ((this._CodePostal != value))
+				{
+					this._CodePostal = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Localite", DbType="NVarChar(50)")]
+		public string Localite
+		{
+			get
+			{
+				return this._Localite;
+			}
+			set
+			{
+				if ((this._Localite != value))
+				{
+					this._Localite = value;
 				}
 			}
 		}
