@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAPI_Exo1
+namespace TestWebApi2
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -62,80 +62,18 @@ namespace WebAPI_Exo1
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserList")]
-		public ISingleResult<GetUserListResult> GetUserList()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<GetUserListResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserInfo")]
 		public ISingleResult<GetUserInfoResult> GetUserInfo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserID", DbType="UniqueIdentifier")] System.Nullable<System.Guid> userID)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userID);
 			return ((ISingleResult<GetUserInfoResult>)(result.ReturnValue));
 		}
-	}
-	
-	public partial class GetUserListResult
-	{
 		
-		private System.Guid _UserID;
-		
-		private string _Nom;
-		
-		private string _Prenom;
-		
-		public GetUserListResult()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetUserList")]
+		public ISingleResult<GetUserListResult> GetUserList()
 		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier NOT NULL")]
-		public System.Guid UserID
-		{
-			get
-			{
-				return this._UserID;
-			}
-			set
-			{
-				if ((this._UserID != value))
-				{
-					this._UserID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nom", DbType="NVarChar(50)")]
-		public string Nom
-		{
-			get
-			{
-				return this._Nom;
-			}
-			set
-			{
-				if ((this._Nom != value))
-				{
-					this._Nom = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Prenom", DbType="NVarChar(50)")]
-		public string Prenom
-		{
-			get
-			{
-				return this._Prenom;
-			}
-			set
-			{
-				if ((this._Prenom != value))
-				{
-					this._Prenom = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<GetUserListResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -304,6 +242,68 @@ namespace WebAPI_Exo1
 				if ((this._Localite != value))
 				{
 					this._Localite = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetUserListResult
+	{
+		
+		private System.Guid _UserID;
+		
+		private string _Nom;
+		
+		private string _Prenom;
+		
+		public GetUserListResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserID", DbType="UniqueIdentifier NOT NULL")]
+		public System.Guid UserID
+		{
+			get
+			{
+				return this._UserID;
+			}
+			set
+			{
+				if ((this._UserID != value))
+				{
+					this._UserID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nom", DbType="NVarChar(50)")]
+		public string Nom
+		{
+			get
+			{
+				return this._Nom;
+			}
+			set
+			{
+				if ((this._Nom != value))
+				{
+					this._Nom = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Prenom", DbType="NVarChar(50)")]
+		public string Prenom
+		{
+			get
+			{
+				return this._Prenom;
+			}
+			set
+			{
+				if ((this._Prenom != value))
+				{
+					this._Prenom = value;
 				}
 			}
 		}

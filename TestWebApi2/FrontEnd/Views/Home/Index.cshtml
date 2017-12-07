@@ -1,0 +1,50 @@
+﻿@model List<FrontEnd.Models.User>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/stylesheet/StyleSheet1.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.2.1.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script type="text/javascript">
+        function GetUserInfo(obj)
+        {
+            //alert($(obj).val());
+            $.ajax({
+                url : '@Url.Action("GetUserInfo")',
+                type : 'POST',
+                data : JSON.stringify({ id: $(obj).val() }),
+                contentType : 'application/json',
+                dataType: 'json',
+                success: function (data) {
+                    $("#Nom").val(data.Nom);
+                    $("#Prenom").val(data.Prenom);
+                    $("#Fixe").val(data.NumFixe);
+                    $("#Gsm").val(data.NumGsm);
+                },
+                error: function(result){
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <select onchange="GetUserInfo(this);">
+            @foreach (var user in Model)
+            {
+                <option value="@user.UserID">@user.Nom @user.Prenom</option>
+            }
+        </select>
+        <div>
+            <label>Nom</label><input id="Nom" /><br />
+            <label>Prenom</label><input id="Prenom" /><br />
+            <label>Fixe</label><input id="Fixe" /><br />
+            <label>Gsm</label><input id="Gsm" /><br />
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbCours20172018" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=127.0.0.1\SQLExpress;Initial Catalog=dbCours20172018;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbCours20172018ConnectionString" Provider="System.Data.SqlClient" />
-  <Function Name="dbo.GetUserList" Method="GetUserList">
-    <ElementType Name="GetUserListResult">
-      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
-      <Column Name="Nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </ElementType>
-  </Function>
+  <Connection Mode="WebSettings" ConnectionString="Data Source=127.0.0.1\SQLEXPRESS;Initial Catalog=dbCours20172018;Persist Security Info=True;User ID=Cours2018" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="dbCours20172018ConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.GetUserInfo" Method="GetUserInfo">
     <Parameter Name="UserID" Parameter="userID" Type="System.Guid" DbType="UniqueIdentifier" />
     <ElementType Name="GetUserInfoResult">
@@ -19,6 +12,13 @@
       <Column Name="NomDeRue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="CodePostal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="Localite" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetUserList" Method="GetUserList">
+    <ElementType Name="GetUserListResult">
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>
